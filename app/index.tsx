@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useWishlistStore } from '@/hooks/useWishlistStore';
 import CategoriesSection from './Components/CategoriesSection';
 import CustomBottomTabNavigation, { TabName } from './Components/CustomBottomTabNavigation';
 import Header from './Components/Header';
@@ -97,14 +98,10 @@ interface CartItem {
 export default function HomeScreen() {
   const [activeTab, setActiveTab] = useState<TabName>('Home');
   const [searchQuery, setSearchQuery] = useState('');
-  const [wishlist, setWishlist] = useState<string[]>(['prod-1']);
+  const wishlist = useWishlistStore((state) => state.wishlist);
+  const toggleWishlist = useWishlistStore((state) => state.toggleWishlist);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  const toggleWishlist = (id: string) => {
-    setWishlist((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
   const handleAddToCart = (product: Product) => {
     setCartItems((prev) => {
       const existing = prev.find((item) => item.product.id === product.id);
