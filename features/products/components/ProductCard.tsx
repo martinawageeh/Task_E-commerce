@@ -1,18 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
-export interface Product {
-  id: string;
-  title: string;
-  price: number;
-  oldPrice?: number;
-  discount?: string;
-  image: any;
-  category?: string;
-  rating?: number;
-  reviewsCount?: number;
-}
+import { Product } from '../types';
 
 interface ProductCardProps {
   product: Product;
@@ -24,7 +13,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({
-  product,     //data ely gaya deh fkrt el props(Destruction)
+  product,
   variant = 'featured',
   isWishlisted = false,
   onPress,
@@ -261,7 +250,6 @@ const styles = StyleSheet.create({
   },
   starFilled: {
     color: '#FFB900',
-
   },
   starEmpty: {
     color: '#D1D1D6',

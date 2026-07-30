@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { TabName } from './CustomBottomTabNavigation';
+import { TabName } from '@/features/navigation/components/CustomBottomTabNavigation';
 
 const CATEGORIES = [
   {
@@ -44,7 +44,7 @@ export default function CategoriesSection() {
       <View style={styles.header}>
         <Text style={styles.title}>Categories</Text>
 
-        <TouchableOpacity   //to make 4kl el click  or effect
+        <TouchableOpacity
           activeOpacity={0.7} onPress={() => setActiveTab('Shop')}>
           <Text style={styles.seeAll}>See All</Text>
         </TouchableOpacity>
@@ -82,76 +82,40 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 24,
   },
-
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
   },
-
   title: {
     fontSize: 20,
     fontWeight: '700',
     color: '#1E1F2E',
   },
-
   seeAll: {
     fontSize: 14,
     fontWeight: '600',
     color: '#7F57F1',
   },
-
   scrollContent: {
-
     paddingRight: 10,
   },
-
-  // categoryItem: {
-  //   width: 72,
-  //   alignItems: 'center',
-  // },
-
-  // iconContainer: {
-  //   width: 80,
-  //   height: 80,
-  //   borderRadius: 20,
-
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  // },
-
-  // icon: {
-  //   width: 48,
-  //   height: 48,
-  //   resizeMode: 'contain',
-  // },
-
-  // categoryName: {
-  //   marginTop: 8,
-  //   fontSize: 13,
-  //   fontWeight: '700',
-  //   color: '#1E1F2E',
-  //   textAlign: 'center',
-  // },
   categoryItem: {
     width: 90,
     alignItems: 'center',
   },
-
   iconContainer: {
     width: 80,
     height: 80,
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   icon: {
     width: '80%',
     height: '80%',
     resizeMode: 'contain',
   },
-
   categoryName: {
     marginTop: 10,
     fontSize: 15,
