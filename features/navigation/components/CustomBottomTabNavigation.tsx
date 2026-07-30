@@ -91,9 +91,9 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
   },
   activeLabel: {
-    color: '#6D3FF3', // Active purple text
+    color: '#6D3FF3',
   },
   inactiveLabel: {
-    color: '#8C8C9E', // Inactive grey text
+    color: '#8C8C9E',
   },
 });

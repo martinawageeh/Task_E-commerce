@@ -6,7 +6,7 @@ interface WishlistState {
 }
 
 export const useWishlistStore = create<WishlistState>((set) => ({
-  wishlist: ['prod-1'], // Initial wishlist containing 'prod-1'
+  wishlist: ['prod-1'],
   toggleWishlist: (id) =>
     set((state) => ({
       wishlist: state.wishlist.includes(id)
